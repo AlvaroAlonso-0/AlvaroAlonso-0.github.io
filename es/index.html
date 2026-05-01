@@ -99,6 +99,16 @@
   ul.pubs li .date { font-family: var(--mono); font-size: 0.85rem; color: var(--fg-dim); }
   ul.pubs li .tag { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); border: 1px solid var(--border); padding: 2px 8px; border-radius: 99px; }
 
+  figure.chart { margin: 24px 0; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 14px 14px 10px; }
+  figure.chart img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  figure.chart figcaption { margin-top: 10px; font-size: 0.8rem; color: var(--fg-dim); font-family: var(--mono); text-align: center; }
+
+  .thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 14px; }
+  .thumbs img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-soft); display: block; background: var(--bg-soft); }
+
+  .role-aside { margin: 20px 0 0; padding: 14px 18px; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius); color: var(--fg-muted); font-size: 0.94rem; }
+  .role-aside strong { color: var(--fg); font-weight: 600; }
+
   footer { padding: 48px 0 96px; color: var(--fg-dim); font-size: 0.92rem; }
   footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
   footer .lang { font-family: var(--mono); font-size: 0.85rem; }
@@ -135,6 +145,8 @@
     <div class="wrap">
       <h2>Sail · Lead Engineer, Capa de Inteligencia · Nov 2024 – actualidad</h2>
       <p>Fundé la capa de inteligencia en <a href="https://sail.money">Sail</a> — un protocolo DeFi de optimización de yield sobre Base y Arbitrum — desde cero. Dos sistemas en producción, ambos diseñados e implementados de extremo a extremo: <strong>el motor de optimización cross-chain</strong> que decide dónde se asigna el capital de los usuarios, y <strong>Sonar</strong>, el sistema de monitorización de riesgo que decide qué evitar. También definí el esquema de la base de datos y construí las primeras interfaces de usuario.</p>
+
+      <p class="role-aside"><strong>Liderazgo.</strong> Presenté la capa de inteligencia a inversores en rondas de financiación, defendí la narrativa técnica del motor y de Sonar en esas conversaciones y lideré con el CEO las discusiones de roadmap sobre dirección y trade-offs.</p>
 
       <h4>Motor de optimización cross-chain</h4>
       <p>Formulé la asignación de cartera como un proceso de decisión de Markov restringido. Función objetivo no convexa (yield, coste de transacción, slippage, riesgo de concentración) optimizada mediante simulated annealing con aceptación Metropolis-Hastings. Un meta-controlador CNN predice los hiperparámetros del annealing a partir del histórico APY/TVL, reduciendo la búsqueda en 3-5×.</p>
@@ -203,31 +215,42 @@
           </tr>
         </tbody>
       </table>
+
+      <figure class="chart">
+        <img src="../images/sail/q1_2026_usd_timeline.png" alt="APY diaria del agente Sail vs. mediana del mercado en el Q1 2026; el área sombreada representa la outperformance de Sail." loading="lazy" />
+        <figcaption>Q1 2026 — APY diaria: agente Sail vs. mediana del mercado. Área sombreada = outperformance.</figcaption>
+      </figure>
+
+      <figure class="chart">
+        <img src="../images/sail/q4_2025_market_vs_sail.png" alt="Q4 2025 — trayectoria de APY del agente Sail frente a todas las fuentes de mercado." loading="lazy" />
+        <figcaption>Q4 2025 — Sail frente a las 20 fuentes de mercado activas, APY diaria.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section>
     <div class="wrap">
       <h2>Publicaciones</h2>
+      <p style="color: var(--fg-dim); font-size: 0.9rem; margin-top: -16px; margin-bottom: 20px;">Los cuatro son trabajos de autor único.</p>
       <ul class="pubs">
         <li>
           <span class="tag">paper</span>
-          <span class="title">Cross-Chain Optimization Engine V2 — Smart Spike Framework</span>
+          <span class="title"><a href="https://docsend.com/view/ucrfnewiuy9t2fwm">Cross-Chain Optimization Engine V2 — Smart Spike Framework ↗</a></span>
           <span class="date">Ene 2026</span>
         </li>
         <li>
           <span class="tag">paper</span>
-          <span class="title">Cross-Chain Optimization Engine V1</span>
+          <span class="title"><a href="https://t.co/x2IPJbcumZ">Cross-Chain Optimization Engine V1 ↗</a></span>
           <span class="date">Oct 2025</span>
         </li>
         <li>
           <span class="tag">informe</span>
-          <span class="title">Sail Agent Performance Analysis — Q4 2025 <span style="color: var(--fg-dim); font-weight: 400;">(autor único)</span></span>
+          <span class="title"><a href="https://t.co/tafqaH8M27">Sail Agent Performance Analysis — Q4 2025 ↗</a></span>
           <span class="date">Ene 2026</span>
         </li>
         <li>
           <span class="tag">informe</span>
-          <span class="title">Sail Agent Performance Analysis — Q1 2026 <span style="color: var(--fg-dim); font-weight: 400;">(autor único)</span></span>
+          <span class="title"><a href="https://docsend.com/view/6xp4wmeb8nc7rxha">Sail Agent Performance Analysis — Q1 2026 ↗</a></span>
           <span class="date">Abr 2026</span>
         </li>
       </ul>
@@ -254,6 +277,11 @@
           <a class="repo" href="https://github.com/AlvaroAlonso-0/PokerHandsRecongition">github ↗</a>
         </header>
         <p>Sistema de visión computacional en tres módulos: adquisición de imagen con eliminación de ruido, reconocimiento de cartas mediante CNN basada en VGG16 y simulador de Montecarlo del equity. Alta precisión de reconocimiento y simulación realista para dos jugadores. Documentado en una publicación universitaria.</p>
+        <div class="thumbs">
+          <img src="../images/poker_recogn/table copy.png" alt="Mesa de poker — captura original de la cámara" loading="lazy" />
+          <img src="../images/poker_recogn/contours.png" alt="Detección de contornos de las cartas" loading="lazy" />
+          <img src="../images/poker_recogn/table_solved copy.png" alt="Reconocimiento + simulación de equity por Montecarlo" loading="lazy" />
+        </div>
       </div>
 
       <div class="project">
@@ -263,6 +291,10 @@
           <a class="repo" href="https://github.com/AlvaroAlonso-0/Figbot">github ↗</a>
         </header>
         <p>Sistema multi-agente que asiste a streamers con la moderación del chat. Baneo basado en blacklist, análisis del ratio de lenguaje inapropiado para timeouts e interfaz para que streamer y mods revisen las decisiones automatizadas.</p>
+        <div class="thumbs">
+          <img src="../images/figbot/figbot_menu.png" alt="Figbot — menú del operador" loading="lazy" />
+          <img src="../images/figbot/figbot_screenshot.png" alt="Figbot — moderación en directo del chat de Twitch" loading="lazy" />
+        </div>
       </div>
 
       <div class="project">

@@ -274,6 +274,55 @@
     padding: 2px 8px; border-radius: 99px;
   }
 
+  /* Chart figures */
+  figure.chart {
+    margin: 24px 0;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 14px 14px 10px;
+  }
+  figure.chart img {
+    width: 100%; height: auto; display: block;
+    border-radius: 4px;
+  }
+  figure.chart figcaption {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--fg-dim);
+    font-family: var(--mono);
+    text-align: center;
+  }
+
+  /* Project image strip */
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .thumbs img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+    background: var(--bg-soft);
+  }
+
+  /* Leadership pill */
+  .role-aside {
+    margin: 20px 0 0;
+    padding: 14px 18px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    color: var(--fg-muted);
+    font-size: 0.94rem;
+  }
+  .role-aside strong { color: var(--fg); font-weight: 600; }
+
   /* Footer */
   footer { padding: 48px 0 96px; color: var(--fg-dim); font-size: 0.92rem; }
   footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
@@ -327,6 +376,8 @@
     <div class="wrap">
       <h2>Sail · Lead Engineer, Intelligence Layer · Nov 2024 – present</h2>
       <p>I founded the intelligence layer at <a href="https://sail.money">Sail</a> — a DeFi yield-optimization protocol on Base and Arbitrum — from a blank page. Two production systems, both designed and implemented end-to-end: <strong>the cross-chain optimization engine</strong> that decides where user capital sits, and <strong>Sonar</strong>, the risk-monitoring system that decides what to avoid. I also defined the database schema and built the first user-facing UIs.</p>
+
+      <p class="role-aside"><strong>Leadership.</strong> Presented the intelligence layer to venture investors during fundraising rounds, owned the technical narrative for the engine and Sonar in those conversations, and led roadmap discussions with the CEO on direction and trade-offs.</p>
 
       <h4>Cross-chain optimization engine</h4>
       <p>Formalized portfolio allocation as a constrained Markov Decision Process. Non-convex objective (yield, transaction cost, slippage, concentration risk) optimized via simulated annealing with Metropolis-Hastings acceptance. A CNN meta-controller predicts the annealing hyperparameters from APY/TVL history, cutting the parameter search by 3-5×.</p>
@@ -395,31 +446,42 @@
           </tr>
         </tbody>
       </table>
+
+      <figure class="chart">
+        <img src="images/sail/q1_2026_usd_timeline.png" alt="Daily APY of the Sail agent vs. market median over Q1 2026, with the shaded area representing Sail's outperformance." loading="lazy" />
+        <figcaption>Q1 2026 — Daily APY: Sail agent vs. market median. Shaded area = outperformance.</figcaption>
+      </figure>
+
+      <figure class="chart">
+        <img src="images/sail/q4_2025_market_vs_sail.png" alt="Q4 2025 — Sail agent APY trajectory vs. all market sources." loading="lazy" />
+        <figcaption>Q4 2025 — Sail vs. all 20 active market sources, daily APY.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section>
     <div class="wrap">
       <h2>Publications</h2>
+      <p style="color: var(--fg-dim); font-size: 0.9rem; margin-top: -16px; margin-bottom: 20px;">All four are sole-author work.</p>
       <ul class="pubs">
         <li>
           <span class="tag">paper</span>
-          <span class="title">Cross-Chain Optimization Engine V2 — Smart Spike Framework</span>
+          <span class="title"><a href="https://docsend.com/view/ucrfnewiuy9t2fwm">Cross-Chain Optimization Engine V2 — Smart Spike Framework ↗</a></span>
           <span class="date">Jan 2026</span>
         </li>
         <li>
           <span class="tag">paper</span>
-          <span class="title">Cross-Chain Optimization Engine V1</span>
+          <span class="title"><a href="https://t.co/x2IPJbcumZ">Cross-Chain Optimization Engine V1 ↗</a></span>
           <span class="date">Oct 2025</span>
         </li>
         <li>
           <span class="tag">report</span>
-          <span class="title">Sail Agent Performance Analysis — Q4 2025 <span style="color: var(--fg-dim); font-weight: 400;">(sole author)</span></span>
+          <span class="title"><a href="https://t.co/tafqaH8M27">Sail Agent Performance Analysis — Q4 2025 ↗</a></span>
           <span class="date">Jan 2026</span>
         </li>
         <li>
           <span class="tag">report</span>
-          <span class="title">Sail Agent Performance Analysis — Q1 2026 <span style="color: var(--fg-dim); font-weight: 400;">(sole author)</span></span>
+          <span class="title"><a href="https://docsend.com/view/6xp4wmeb8nc7rxha">Sail Agent Performance Analysis — Q1 2026 ↗</a></span>
           <span class="date">Apr 2026</span>
         </li>
       </ul>
@@ -446,6 +508,11 @@
           <a class="repo" href="https://github.com/AlvaroAlonso-0/PokerHandsRecongition">github ↗</a>
         </header>
         <p>Three-module computer-vision system: image acquisition with noise removal, VGG16-based card recognition, and a Monte Carlo equity simulator. High recognition accuracy and realistic two-player simulation. Documented in a university publication.</p>
+        <div class="thumbs">
+          <img src="images/poker_recogn/table copy.png" alt="Poker table — original camera capture" loading="lazy" />
+          <img src="images/poker_recogn/contours.png" alt="Detected card contours" loading="lazy" />
+          <img src="images/poker_recogn/table_solved copy.png" alt="Recognition + Monte Carlo equity simulation overlay" loading="lazy" />
+        </div>
       </div>
 
       <div class="project">
@@ -455,6 +522,10 @@
           <a class="repo" href="https://github.com/AlvaroAlonso-0/Figbot">github ↗</a>
         </header>
         <p>Multi-agent system that assists streamers with chat moderation. Blacklist-based banning, bad-language ratio analysis for timeouts, and a GUI for streamers and mods to review the automated decisions.</p>
+        <div class="thumbs">
+          <img src="images/figbot/figbot_menu.png" alt="Figbot — operator menu" loading="lazy" />
+          <img src="images/figbot/figbot_screenshot.png" alt="Figbot — live Twitch chat moderation" loading="lazy" />
+        </div>
       </div>
 
       <div class="project">
