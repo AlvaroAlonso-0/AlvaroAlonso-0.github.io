@@ -1,532 +1,619 @@
-<!DOCTYPE HTML>
-<!--
-	Paradigm Shift by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Alvaro Alonso</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Álvaro Alonso — Lead Engineer, Intelligence Layer at Sail</title>
+<meta name="description" content="Lead Engineer at Sail. Quantitative DeFi, risk monitoring, and cross-chain yield optimization. Author of two research papers and two quarterly performance reports." />
+<meta name="theme-color" content="#0b0d10" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0d10;
+    --bg-elev: #11151a;
+    --bg-soft: #161b22;
+    --border: #222a33;
+    --border-soft: #1a2129;
+    --fg: #e6edf3;
+    --fg-muted: #9aa6b2;
+    --fg-dim: #6b7682;
+    --accent: #4cc9b0;
+    --accent-soft: rgba(76, 201, 176, 0.12);
+    --warn: #f0b86e;
+    --bad: #e87575;
+    --good: #6fcf97;
+    --radius: 6px;
+    --max: 880px;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.65 var(--sans);
+    font-feature-settings: "ss01", "cv11";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
 
-				<!-- Intro -->
-					<section class="intro">
-						<header>
-							<h1>Alvaro Alonso</h1>
-							<p>My portfolio</p>
-							<ul class ="icons">
-								<li><a href="https://www.linkedin.com/in/alvaro-alonso-miguel" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-								<li><a href="https://github.com/AlvaroAlonso-0" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							</ul>
-							<ul class="items">
-								<li>
-									<h3>Email</h3><p> alonso.miguel.alvaro1@gmail.com</p>
-								</li>
-								<li>
-									<h3>Phone</h3><p>+34 661 140 420</p>
-								</li>
-							</ul>
-							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
-							</ul>
-						</header>
-						<div class="content">
-							<span class="image fill" data-position="center"><img src="images/portada.jpg" alt="Cover" /></span>
-						</div>
-					</section>
+  ::selection { background: var(--accent-soft); color: var(--fg); }
 
-				<!-- Section -->
-				<section id="first">
-					<header>
-						<h2>AI chatbot for DeFi questions</h2>
-						<h3>Python, NextJS, Convolutional Neural Networks</h3>
-						<p> Autumn 24</p>
-						<a href="https://github.com/AlvaroAlonso-0/fungi-chatbot" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Made a conversational chatbot designed to assist users with decentralized finance (DeFi) questions. This project integrates a Python-based FastAPI backend and a Next.js frontend to provide quick, resourceful responses to user queries on DeFi topics. The chatbot uses a convolutional neural network (CNN) to analyze user input and provide accurate, relevant answers. The system is designed to be user-friendly and intuitive, offering a seamless experience for users seeking information on DeFi topics.
-						</p>							
-						<div class="box">
-							<figure>
-								<figcaption>
-									Screenshot from Demo
-									<a href="https://youtu.be/-NLH3tmKEXk" class="icon brands fa-youtube"><span class="label">YouTube</span></a>
-								</figcaption>
-								<img src="images/fungichatbot/screenshot_demo.png" alt="Chatbot" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  a { color: var(--accent); text-decoration: none; transition: color 120ms; }
+  a:hover { color: var(--fg); }
+  a.subtle { color: var(--fg-muted); border-bottom: 1px dotted var(--border); }
+  a.subtle:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Poker Vision: Winning with AI and Cards in Sight</h2>
-						<h3>Python, Computational Vision, Convolutional Neural Networks</h3>
-						<p> Spring-Summer 2023</p>
-						<a href="https://github.com/AlvaroAlonso-0/PokerHandsRecongition" class="icon brands fa-github"><span class="label">GitHub</span></a>
-						<a href="images/poker_recogn/ReconocimientoDeMesasDePokerMedianteVisionComputacional.pdf" class="icon regular fa-file-pdf" download><span class="label">PDF</span></a>
-					</header>
-					<div class="content">
-						<p>Made a computer vision solution for poker table recognition which also calculates victory probabilities for two players, by the use of neural network architectures and game simulations. The system comprises three modules, involving image acquisition, noise removal, and card recognition using a VGG16-based convolutional model. A Montecarlo simulation is employed to analyze the game's state, achieving high training accuracy and realistic simulation results. All this results and development has been documented in a paper published by the college where i made my studies, which concludes with a discussion of the work done and future possibilities.
-						</p>							
-						<div class="box">
-							<figure>
-								<figcaption>Camera</figcaption>
-								<img src="images/poker_recogn/table copy.png" alt="Camera" /></a>
-						</div>
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Cards Detected</figcaption>
-								<img src="images/poker_recogn/contours.png" alt="Cards Detected" /></a>
-							</figure>
-						</div>	
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Recognition and Simulation</figcaption>
-								<img src="images/poker_recogn/table_solved copy.png" alt="Recognition and Simulation" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
-				
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>MangaTracker</h2>
-						<h3>Python, Requests</h3>
-						<p> Winter 2023</p>
-						<a href="https://github.com/AlvaroAlonso-0/SpanishMangaPublishingTracker" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>This Python script is designed to provide users with information on manga books published in Spain, as well as their monthly releases. The script displays a user-friendly menu on the terminal, allowing users to easily navigate through the various options available. The script utilizes an internal database containing book IDs, making it quick and easy to find the latest releases of a given title. With its intuitive interface and up-to-date information, this script is a valuable resource for manga fans in Spain.</p>
-						<span class="image main"><img src="images/manga/menu.png" alt="manga_menu" /></span>
-					</div>
-				</section>
+  code, .mono { font-family: var(--mono); font-size: 0.92em; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Reactify</h2>
-						<h3>React, Dynamic Web, Spotify API</h3>
-						<p> Winter 2022</p>
-						<a href="https://github.com/AlvaroAlonso-0/react-music-player" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Developed a web page that integrates with the Spotify API to display users data, top tracks, and more. Implemented dynamic components that update in-real time based on user interactions or played music. Designed an intuitive and responsive user interface that maximises user engagement and satisfaction.</p>
-						<div class="box">
-							<figure>
-								<figcaption>Library</figcaption>
-								<img src="images/reactify/library.png" alt="Library" /></a>
-						</div>	
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Player</figcaption>
-								<img src="images/reactify/player.png" alt="Player" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Ecomobility</h2>
-						<h3>Semantic Web, Linked Data, Ontologies</h3>
-						<p> Autumn 2022</p>
-						<a href="https://github.com/FacultadInformatica-LinkedData/Curso2022-2023/tree/master/HandsOn/Group02" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Created a web that uses public csv's to display data from bike stations and charging points of Madrid. Cleaned original data with OpenRefine and created RML mappings used to publish data on new RDFs. Designed a user interface which helps the user find all these points and information on a dynamic map.</p>
-						<div class="box">
-							<figure>
-								<figcaption>Full Map</figcaption>
-								<img src="images/ecomobility/full_map.png" alt="Full Map" /></a>
-						</div>	
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Selected District</figcaption>
-								<img src="images/ecomobility/district_map.png" alt="District Map" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  header.hero {
+    padding: 96px 0 48px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  header.hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    line-height: 1.05;
+    margin: 0 0 12px;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  header.hero .role {
+    font-size: 1.15rem;
+    color: var(--fg-muted);
+    margin: 0 0 8px;
+  }
+  header.hero .role strong { color: var(--fg); font-weight: 600; }
+  header.hero .role .accent { color: var(--accent); font-weight: 500; }
+  header.hero .geo {
+    color: var(--fg-dim);
+    font-size: 0.95rem;
+    margin: 0 0 28px;
+  }
+  header.hero .links {
+    display: flex; flex-wrap: wrap; gap: 18px;
+    font-family: var(--mono);
+    font-size: 0.92rem;
+  }
+  header.hero .links a {
+    color: var(--fg-muted);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  header.hero .links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  header.hero .links a span.arrow { color: var(--fg-dim); margin-left: 4px; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Figbot</h2>
-						<h3>AI, Java & Rest Services</h3>
-						<p> Summer 2022</p>
-						<a href="https://github.com/AlvaroAlonso-0/Figbot" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Crated a multi-agent intelligent system that helps a streamer with the modding labour of a twitch chat. Developed a GUI to register the decisions made so the streamer and mods can review them at any time. Achieved to ban with a words blacklist and timeout users by analysing the percentage of bad language.</p>
-						<div class="box">
-							<figure>
-								<figcaption>Figbot Menu</figcaption>
-								<img src="images/figbot/figbot_menu.png" alt="Menu" /></a>
-						</div>	
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Twitch Chat</figcaption>
-								<img src="images/figbot/figbot_screenshot.png" alt="Twitch Chat" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  /* Stats strip */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    padding: 36px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .stat { padding: 0 16px; border-left: 1px solid var(--border-soft); }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat .num {
+    font-family: var(--mono);
+    font-size: 1.85rem;
+    font-weight: 600;
+    color: var(--fg);
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .stat .num .sub { color: var(--fg-muted); font-size: 0.7em; font-weight: 500; }
+  .stat .lbl {
+    font-size: 0.78rem;
+    color: var(--fg-dim);
+    margin-top: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  @media (max-width: 640px) {
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
+    .stat { border-left: none; padding-left: 0; }
+    .stat:nth-child(odd) { border-right: 1px solid var(--border-soft); padding-right: 16px; }
+  }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Sokoban</h2>
-						<h3>Java & XML</h3>
-						<p> Spring 2022</p>
-						<a href="https://github.com/AlvaroAlonso-0/Sokoban" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Emulated the Sokoban game using the model-view-controller pattern with shortcuts and level creation. Made use of xml files to save the status of levels making possible to have simultaneous games to load. Optimized the development by making use of the SCRUM methodology and Maven for version control</p>
-						<span class="image main"><img src="images/sokoban/sokoban.png" alt="sokoban" /></span>
-					</div>
-				</section>
+  /* Sections */
+  section { padding: 64px 0; border-bottom: 1px solid var(--border-soft); }
+  section:last-of-type { border-bottom: none; }
+  section h2 {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--fg-dim);
+    margin: 0 0 28px;
+    font-weight: 600;
+  }
+  section h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    letter-spacing: -0.01em;
+  }
+  section h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: var(--fg);
+  }
+  section p { color: var(--fg-muted); margin: 0 0 16px; }
+  section p strong { color: var(--fg); font-weight: 600; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Data Center</h2>
-						<h3>Research Work</h3>
-						<p> Winter 2022</p>
-						<a href="images/cpd/Data_Center_Project.pdf" class="icon regular fa-file-pdf" download><span class="label">PDF</span></a>
-					</header>
-					<div class="content">
-						<p>As a group we developed a full data center from scratch, as part of a subject from college. We created the racks oriented to an online video editting platform so they needed to be very powerful. This leaded to a future problem because they gave off so much heat and needed so much power there weren't available pieces to cover this.</p>
-						<p>In the pdf available to download you could see the full paper (in spanish) and watch all the designs we created for the data center, racks, electricity, air flows, ...</p>
-						<span class="image main"><img src="images/cpd/Planos_CPD_-_Plano_electrico_6.svg" alt="cpd" /></span>
-					</div>
-				</section>
+  ul.clean { list-style: none; padding: 0; margin: 0 0 16px; }
+  ul.clean li {
+    padding: 8px 0 8px 18px;
+    position: relative;
+    color: var(--fg-muted);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li::before {
+    content: "→";
+    position: absolute;
+    left: 0; top: 8px;
+    color: var(--fg-dim);
+    font-family: var(--mono);
+  }
+  ul.clean li strong { color: var(--fg); font-weight: 600; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>GeoCaching</h2>
-						<h3>API Java Rest Services </h3>
-						<p> Winter 2021/22</p>
-					</header>
-					<div class="content">
-						<p>Developed a Rest API for a clone of GeoCaching. Included two resources, users and treasures. The user resource can add a user, get users data, add friends, list friends,it can found treasures and be the creator of treasures. In the treasure resource are made the operations related with the information of the treasures, edit, delete and add new treasures.</p>
-						<div class="box">
-							<figure>
-								<figcaption>Request the summary of a user</figcaption>
-								<img src="images/sos/summary_request.jpeg" alt="Request the summary of a user" /></a>
-						</div>	
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Data Persistance</figcaption>
-								<img src="images/sos/sql_database.jpeg" alt="Data Persistance" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  /* Math callouts */
+  .math {
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    color: var(--fg);
+    overflow-x: auto;
+    line-height: 1.7;
+  }
+  .math .label {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--fg-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+    font-family: var(--sans);
+    font-weight: 500;
+  }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Distributed Systems Broker</h2>
-						<h3>C</h3>
-						<p> Winter 2021/22</p>
-					</header>
-					<div class="content">
-						<p>Implemented a broker and a client for a distributed system which lets the users list all the available themes, subscribe and unsuscribe to those themes, show users subscribed to a theme, publish into the themes, receive messges from multiple themes because they get queued and save them into files. Also the system let the users close the client and resume their session with the themes they were subscribed. Also some filters are availabele for a better experience while listing the attributes.</p>
-						<span class="image main"><img src="images/broker/broker.png" alt="broker ds" /></span>
-					</div>
-				</section>
-				
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Bank Fraud Detection Middleware</h2>
-						<h3>Java JMS</h3>
-						<p> Winter 2021/22</p>
-					</header>
-					<div class="content">
-						<p>Created a software system that helped to fight fraudulent transactions on banks from different regions. Made use of hash tables, queues, and sorting algorithms to minimise the complexity of the system. Designed a middleware system to avoid fraud transactions between servers making use of concurrency.</p>
-						<span class="image main"><img src="images/bank_fraud/bank_fraud.png" alt="middleware" /></span>
-					</div>
-				</section>
+  /* Defensive-wins callout */
+  .wins {
+    background: linear-gradient(180deg, rgba(76, 201, 176, 0.06), transparent);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .wins .head {
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .wins ul { padding: 0; margin: 0; list-style: none; }
+  .wins li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-soft);
+    color: var(--fg-muted);
+  }
+  .wins li:last-child { border-bottom: none; }
+  .wins li strong { color: var(--fg); font-weight: 600; display: block; margin-bottom: 4px; }
+  .wins li time { font-family: var(--mono); color: var(--fg-dim); font-size: 0.85rem; margin-right: 10px; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Newspaper App</h2>
-						<h3>Android (Java)</h3>
-						<p> Winter 2021</p>
-						<a href="https://github.com/Rulo401/PMD_Grupo14" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Created an app for Android which connects to a server that can upload, edit and download articles. Made a login system that allows the user to edit his own articles or create new ones, once is logged. Achieved a notification system that alerts users if new articles are uploaded since the app was closed.</p>
-						<div class="box">
-							<figure>
-								<figcaption>Filter and Detailed View</figcaption>
-								<img src="images/newspaper_app/main_and_detailed.png" alt="Main and Detailed" /></a>
-						</div>	
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Edit Menu and Notification</figcaption>
-								<img src="images/newspaper_app/edit_and_notification.png" alt="Edit and Notification" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  /* Projects */
+  .project {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .project:last-child { border-bottom: none; }
+  .project header.row {
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 20px;
+    margin-bottom: 8px;
+  }
+  .project header.row .title { font-size: 1.15rem; font-weight: 600; }
+  .project header.row .meta { font-family: var(--mono); font-size: 0.85rem; color: var(--fg-dim); }
+  .project header.row a.repo {
+    margin-left: auto;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    color: var(--fg-muted);
+  }
+  .project header.row a.repo:hover { color: var(--accent); }
+  .project p { margin: 4px 0 0; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Personal Shell</h2>
-						<h3>C & Bash</h3>
-						<p> Winter 2021</p>
-					</header>
-					<div class="content">
-						<p>Designed a shell trying to replicate some Bash commands to understand how they are implemented. Made a parser and a scanner to read from the console and interpret each command for his processing. Optimised the computational complexity creating structures and using multiple threads and processes.</p>
-						<span class="image main"><img src="images/minishell/minishell.png" alt="minishell" /></span>
-					</div>
-				</section>
+  /* Performance table */
+  table.perf {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 8px;
+    font-size: 0.92rem;
+  }
+  table.perf th, table.perf td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  table.perf th {
+    color: var(--fg-dim);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 600;
+  }
+  table.perf td.num { font-family: var(--mono); }
+  table.perf td.pos { color: var(--good); font-family: var(--mono); }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Kiev Underground Map</h2>
-						<h3>Python</h3>
-						<p> Autumn 2021</p>
-						<a href="https://github.com/AlvaroAlonso-0/KievUndergroundApp" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Wanted to create an underground map which shows the user the best way to travel between two stops. Made use of a graphical interface to let the client select the stops and go back or repeat the selection. Achieved the best travel time making use of an heuristic algorithm to return the fastest selected path.</p>
-						<div class="box">
-							<figure>
-								<figcaption>Initial State</figcaption>
-								<img src="images/metro/init.png" alt="Initial" /></a>
-						</div>	
-						</figure>
-						<div class="box">
-							<figure>
-								<figcaption>Path Found</figcaption>
-								<img src="images/metro/end.png" alt="Path found" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  /* Pubs list */
+  ul.pubs { list-style: none; padding: 0; margin: 0; }
+  ul.pubs li {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-soft);
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  }
+  ul.pubs li:last-child { border-bottom: none; }
+  ul.pubs li .title { color: var(--fg); font-weight: 500; flex: 1 1 auto; }
+  ul.pubs li .date { font-family: var(--mono); font-size: 0.85rem; color: var(--fg-dim); }
+  ul.pubs li .tag {
+    font-family: var(--mono); font-size: 0.72rem;
+    color: var(--accent); border: 1px solid var(--border);
+    padding: 2px 8px; border-radius: 99px;
+  }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Sudoku Solver</h2>
-						<h3>Java</h3>
-						<p> Autumn 2021</p>
-					</header>
-					<div class="content">
-						<p>Developed a sudoku solver making use of dynamic programming to avoid repeating same search paths. Made use of objects to save the intermedium states and recursion to analyse and search each branch. Capable of solve 4x4 boards in the fastest time based on difficulty achieving the first possible solution.</p>
-						<span class="image main"><img src="images/sudoku/sudoku.png" alt="Sudoku" /></span>
-					</div>
-				</section>
+  /* Chart figures */
+  figure.chart {
+    margin: 24px 0;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    padding: 14px 14px 10px;
+  }
+  figure.chart img {
+    width: 100%; height: auto; display: block;
+    border-radius: 4px;
+  }
+  figure.chart figcaption {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--fg-dim);
+    font-family: var(--mono);
+    text-align: center;
+  }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Personal Compiler</h2>
-						<h3>Java</h3>
-						<p> Summer 2021</p>
-						<a href="https://github.com/AlvaroAlonso-0/JavaScript-PDL-Compiler" class="icon brands fa-github"><span class="label">GitHub</span></a>
-					</header>
-					<div class="content">
-						<p>Designed a compiler for a simpler copy of Javascript that avoids errors coming from the input received. Made three different analysers for each part of the compilation process and defined the symbols table. Optimised the analysis by stoping the process when an error is detected or warning only if is possible.</p>
-						<figure>
-							<figcaption>Feedback from the compiler</figcaption>
-							<a class="image main"><img src="images/compiler/compiler.png" alt="Compiler"/></a>
-						</figure>
-					</div>
-				</section>
-				
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Snake Game</h2>
-						<h3>Python</h3>
-						<p> Summer 2021</p>
-					</header>
-					<div class="content">
-						<p>Created the snake game which consists of creating the biggest snake possible without biting yourself. Made fruits to appear random so each time the game is slightly different and with time gets harder. Achieved a playable game based on the knowledge I achieved in python with graphical user interface.</p>
-						<span class="image main"><img src="images/snake/snake_gui.png" alt="Snake" /></span>
-					</div>
-				</section>
+  /* Project image strip */
+  .thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .thumbs img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid var(--border-soft);
+    display: block;
+    background: var(--bg-soft);
+  }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Bank Accounts Software</h2>
-						<h3>Java</h3>
-						<p> Spring 2021</p>
-					</header>
-					<div class="content">
-						<p>Created a software system that helped with account management in banks with different structures. Made use of hash tables, queues, and sorting algorithms to minimise the complexity of the system. Designed a concurrent system to allow creation of multiple accounts and transactions between them.</p>
-						<span class="image main"><img src="images/bank/bank_cmd.png" alt="Snake" /></span>
-					</div>
-				</section>
+  /* Leadership pill */
+  .role-aside {
+    margin: 20px 0 0;
+    padding: 14px 18px;
+    background: var(--bg-soft);
+    border: 1px solid var(--border-soft);
+    border-radius: var(--radius);
+    color: var(--fg-muted);
+    font-size: 0.94rem;
+  }
+  .role-aside strong { color: var(--fg); font-weight: 600; }
 
-				<!-- Section -->
-				<section>
-					<header>
-						<h2>Series Database and Interface</h2>
-						<h3>Java and SQL</h3>
-						<p> Spring 2021</p>
-					</header>
-					<div class="content">
-						<p>Designed a cmd interface which allows users to research for series by seasons, actors and languages . Made a profile system for the users so they can have their favourite series and friends inside the app. Optimised the database arrangement by researching similar websites and studying most used features.</p>
-						<div class="box">
-							<figure>
-								<figcaption>Entity Relation Diagram</figcaption>
-								<a class="image main"><img src="images/series_database/er_diagram.png"  alt="ERDiagram" /></a>
-							</figure>
-						</div>
-						<div class="box">
-							<figure>
-								<figcaption>User Inerface</figcaption>	
-								<a class="image main"><img src="images/series_database/interface.png" alt="User Interface" /></a>
-							</figure>
-						</div>
-					</div>
-				</section>
+  /* Footer */
+  footer { padding: 48px 0 96px; color: var(--fg-dim); font-size: 0.92rem; }
+  footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  footer code { color: var(--fg-muted); }
+  footer .lang {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+  }
+  footer .lang a { color: var(--fg-muted); }
+</style>
+</head>
+<body>
 
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Black and White Filter</h2>
-							<h3>Assembly MC88110</h3>
-							<p> Winter 2020/21</p>
-						</header>
-						<div class="content">
-							<p>Wanted to create a filter for images based on each pixel value to create an out of focus perception. Made use of macros to create a stacks that allowed me to save data between different function calls. Achieved a filter for black and white images that generates a new one based on the surrounding pixels.</p>
-							<div class="box">
-								<figure>
-									<figcaption>Original Image</figcaption>
-									<img src="images/filter/filter_original.png" alt="Original Image" /></a>
-							</div>	
-							</figure>
-							<div class="box">
-								<figure>
-									<figcaption>Filtered Image</figcaption>
-									<img src="images/filter/filter_filtrada.png" alt="Filtered Image" /></a>
-								</figure>
-							</div>
-						</div>
-					</section>
+  <header class="hero">
+    <div class="wrap">
+      <h1>Álvaro Alonso</h1>
+      <p class="role"><strong>Lead Engineer · Intelligence Layer</strong> at <a href="https://sail.money">Sail</a></p>
+      <p class="role"><span class="accent">Quantitative DeFi</span> · risk monitoring · cross-chain yield optimization</p>
+      <p class="geo">Madrid, Spain · open to remote / EU</p>
+      <nav class="links">
+        <a href="https://github.com/AlvaroAlonso-0">github<span class="arrow">↗</span></a>
+        <a href="https://linkedin.com/in/alvaro-alonso-miguel">linkedin<span class="arrow">↗</span></a>
+        <a href="mailto:alonso.miguel.alvaro1@gmail.com">email<span class="arrow">↗</span></a>
+        <a href="es/" class="subtle">español</a>
+      </nav>
+    </div>
+  </header>
 
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Groceries App</h2>
-							<h3>Figma</h3>
-							<p> Spring 2020</p>
-						</header>
-						<div class="content">
-							<p>Designed an interface that helps with the groceries list management between cohabiting users. Made interviews to people in supermarkets to upgrade the interface and also evaluated efficiency. Optimised the interface by various iterations that finished with more modes for colour blind people.</p>
-							<div class="box">
-								<figure>
-									<figcaption>High Fidelity Prototype</figcaption>
-									<a class="image main"><img src="images/ipo/ipo_modelo.png"  alt="HFPrototype" /></a>
-								</figure>
-							</div>
-							<div class="box">
-								<figure>
-									<figcaption>Usability Tests - Results - Efficiency</figcaption>	
-									<a class="image main"><img src="images/ipo/ipo_estadisticas.png" alt="Usability Test" /></a>
-								</figure>
-							</div>
-						</div>
-					</section>
-				
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Airport Flight Manager</h2>
-							<h3>Python</h3>
-							<p> Fall 2020</p>
-						</header>
-						<div class="content">
-							<p>Created a management system which helped with the airplanes flow in an airport with landing queues. Made use of hash tables, queues, and sorting algorithms to minimise the complexity of the system. Designed and used a library to create priority queues and used heap sorting for better complexity.</p>
-							<div class="box">
-								<span class="image main"><img src="images/airport/airport_console.png" alt="Airport Console" /></span>			
-							</div>
-						</div>
-					</section>
-			
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Chess Game</h2>
-							<h3>Java</h3>
-							<p> Spring 2020</p>
-						</header>
-						<div class="content">
-							<p>Developed a chess game for two players which incorporated all the basic movements of the pieces. Made use of stacks to undo and redo movements, and created the whole board GUI using libraries. Designed the board and placed a table that registered the movements made through the entire game.</p>
-							<span class="image main"><img src="images/chess/chess_gui.png" alt="Chess" /></span>			
-						</div>
-					</section>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat">
+        <div class="num">~$650M<span class="sub"></span></div>
+        <div class="lbl">routed in 6 months</div>
+      </div>
+      <div class="stat">
+        <div class="num">~200</div>
+        <div class="lbl">users</div>
+      </div>
+      <div class="stat">
+        <div class="num">~$600k</div>
+        <div class="lbl">TVL</div>
+      </div>
+      <div class="stat">
+        <div class="num">2 + 2</div>
+        <div class="lbl">papers · reports</div>
+      </div>
+    </div>
+  </div>
 
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Mandelbrot Fractal</h2>
-							<h3>Python</h3>
-							<p> Fall 2020</p>
-						</header>
-						<div class="content">
-							<p>Designed a script that generates a Mandelbrot fractal into a jpg and displays progress percentage. Tested the performance of different calculus to optimise the script complexity and time of production. Achieved a time of 4 seconds for a 1920x1080px fractal with a speedup of 2s against the first version.</p>
-							<div class="box">
-								<img src="images/fractal/fractal_image.png"  alt="Fractal" />
-							</div>
-						</div>
-					</section>
+  <section>
+    <div class="wrap">
+      <h2>Sail · Lead Engineer, Intelligence Layer · Nov 2024 – present</h2>
+      <p>I founded the intelligence layer at <a href="https://sail.money">Sail</a> — a DeFi yield-optimization protocol on Base and Arbitrum — from a blank page. Two production systems, both designed and implemented end-to-end: <strong>the cross-chain optimization engine</strong> that decides where user capital sits, and <strong>Sonar</strong>, the risk-monitoring system that decides what to avoid. I also defined the database schema and built the first user-facing UIs.</p>
 
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>POKER GAME</h2>
-							<h3>Java</h3>
-							<p> Fall 2019</p>
-						</header>
-						<div class="content">
-							<p>Created a game with different objects such as cards, deck, table; and made a library with it to share it. Made an algorithm myself which compared both hands and called the CPU bets based on player turns. Achieved a Texas Hold’em command line game with turns, tokens and bets played against the CPU.</p>
-							<div class="box">
-								<span class="image main"><img src="images/poker/poker_consola.png" alt="Poker Console" /></span>			
-							</div>
-						</div>
-					</section>
+      <p class="role-aside"><strong>Leadership.</strong> Presented the intelligence layer to venture investors during fundraising rounds, owned the technical narrative for the engine and Sonar in those conversations, and led roadmap discussions with the CEO on direction and trade-offs.</p>
 
-			</div>
-		
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+      <h4>Cross-chain optimization engine</h4>
+      <p>Formalized portfolio allocation as a constrained Markov Decision Process. Non-convex objective (yield, transaction cost, slippage, concentration risk) optimized via simulated annealing with Metropolis-Hastings acceptance. A CNN meta-controller predicts the annealing hyperparameters from APY/TVL history, cutting the parameter search by 3-5×.</p>
 
-	</body>
+      <div class="math">
+        <span class="label">Weighted portfolio APY</span>
+        APY<sub>p</sub> = Σ<sub>i</sub> (USD<sub>i</sub> · APY<sub>i</sub>) / Σ<sub>i</sub> USD<sub>i</sub>
+      </div>
+
+      <div class="math">
+        <span class="label">Metropolis-Hastings acceptance</span>
+        P(accept) = min(1, exp(−ΔE / T))   where T cools on the schedule predicted by the meta-controller.
+      </div>
+
+      <p>The full mathematical framework — formulation, proofs, and empirical validation — is documented in two public research papers I authored.</p>
+
+      <h4>Sonar — risk monitoring</h4>
+      <p>z-score anomaly detection over multi-horizon APY baselines (1d / 7d / 30d), dual-mode <code>SPIKE / TREND</code> scoring (80/20 vs 40/60 weighting), tier-based execution cycles (1h / 2h / 6h), and a financial-inertia mechanism that cut unnecessary portfolio churn by 43&nbsp;%.</p>
+
+      <div class="math">
+        <span class="label">Anomaly score</span>
+        z<sub>h</sub>(t) = (APY(t) − μ<sub>h</sub>) / σ<sub>h</sub>     for h ∈ {1d, 7d, 30d}
+      </div>
+
+      <div class="wins">
+        <div class="head">Defensive wins · Q1 2026</div>
+        <p style="margin: 0 0 12px; color: var(--fg-muted);">Sonar suspended user exposure ahead of two publicly confirmed exploits — detection happened <em>before</em> public confirmation in both cases:</p>
+        <ul>
+          <li>
+            <strong><time>Feb 15, 2026</time>· Moonwell oracle exploit</strong>
+            $1.78M bad debt, 181 borrowers harmed. Sonar flagged abnormal oracle behaviour on Moonwell's Base markets and suspended exposure before the scale of the exploit was publicly confirmed.
+          </li>
+          <li>
+            <strong><time>Mar 22, 2026</time>· Resolv Protocol exploit</strong>
+            ~$80M USR minted via a compromised AWS KMS key, ~$25M ETH extracted, USR de-pegged to $0.003. Sonar detected unchecked-minting activity and suspended Resolv-exposed positions before USR's de-peg became publicly visible.
+          </li>
+        </ul>
+      </div>
+
+      <h4>Production performance</h4>
+      <p>All returns net of gas, bridge fees, slippage, and protocol fees.</p>
+      <table class="perf">
+        <thead>
+          <tr>
+            <th>quarter</th>
+            <th>mean APY</th>
+            <th>vs. best static</th>
+            <th>vs. T-Bills</th>
+            <th>scope</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">Q4 2025</td>
+            <td class="num">8.91 %</td>
+            <td class="pos">+5.43 %</td>
+            <td class="pos">+123.87 %</td>
+            <td>20 sources, USDC + USDT</td>
+          </tr>
+          <tr>
+            <td class="num">Q1 2026</td>
+            <td class="num">6.06 %</td>
+            <td>—</td>
+            <td class="pos">+44.3 %</td>
+            <td>32 sources, USDC + USDT, +EURC</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure class="chart">
+        <img src="images/sail/q1_2026_usd_timeline.png" alt="Daily APY of the Sail agent vs. market median over Q1 2026, with the shaded area representing Sail's outperformance." loading="lazy" />
+        <figcaption>Q1 2026 — Daily APY: Sail agent vs. market median. Shaded area = outperformance.</figcaption>
+      </figure>
+
+      <figure class="chart">
+        <img src="images/sail/q4_2025_market_vs_sail.png" alt="Q4 2025 — Sail agent APY trajectory vs. all market sources." loading="lazy" />
+        <figcaption>Q4 2025 — Sail vs. all 20 active market sources, daily APY.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Earlier experience</h2>
+      <ul class="clean">
+        <li><strong>Accelya</strong> — Software Engineer I · payments management application, full-stack · Java · C# · .NET · SQL <span style="color: var(--fg-dim); font-family: var(--mono); font-size: 0.85rem;">· Dec 2023 – Nov 2024</span></li>
+        <li><strong>Deloitte</strong> — Technology Strategy &amp; Transformation intern · market research and analysis for technology clients in the data division · RapidMiner · Dataiku · Alteryx <span style="color: var(--fg-dim); font-family: var(--mono); font-size: 0.85rem;">· Mar – Jun 2023</span></li>
+        <li><strong>European Union Agency for Railways</strong> — software engineering intern · SHACL shapes for knowledge-graph validation in the EUAR maps app, plus a web dashboard for validation reports · SPARQL · SHACL · RDF <span style="color: var(--fg-dim); font-family: var(--mono); font-size: 0.85rem;">· Winter 2022/23</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Publications</h2>
+      <p style="color: var(--fg-dim); font-size: 0.9rem; margin-top: -16px; margin-bottom: 20px;">All four are sole-author work.</p>
+      <ul class="pubs">
+        <li>
+          <span class="tag">paper</span>
+          <span class="title"><a href="https://docsend.com/view/ucrfnewiuy9t2fwm">Cross-Chain Optimization Engine V2 — Smart Spike Framework ↗</a></span>
+          <span class="date">Jan 2026</span>
+        </li>
+        <li>
+          <span class="tag">paper</span>
+          <span class="title"><a href="https://t.co/x2IPJbcumZ">Cross-Chain Optimization Engine V1 ↗</a></span>
+          <span class="date">Oct 2025</span>
+        </li>
+        <li>
+          <span class="tag">report</span>
+          <span class="title"><a href="https://t.co/tafqaH8M27">Sail Agent Performance Analysis — Q4 2025 ↗</a></span>
+          <span class="date">Jan 2026</span>
+        </li>
+        <li>
+          <span class="tag">report</span>
+          <span class="title"><a href="https://docsend.com/view/6xp4wmeb8nc7rxha">Sail Agent Performance Analysis — Q1 2026 ↗</a></span>
+          <span class="date">Apr 2026</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Selected projects</h2>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">optcg — investment portfolio tracker</span>
+          <span class="meta">Python · SQLite · Textual TUI · ~6.8k LOC · 2026</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/optcg">github ↗</a>
+        </header>
+        <p>CLI + TUI portfolio tracker for One Piece TCG (cards, sealed boxes, graded slabs). Live price scraping from CardMarket and eBay with a Cloudflare-aware cookie pipeline that decrypts Chrome / Arc / Brave / Edge cookies on macOS and Windows via each platform's keychain. Offline self-contained HTML dashboard, iCloud sync, P&amp;L per item, receipt management.</p>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">Poker Vision</span>
+          <span class="meta">Python · PyTorch · OpenCV · 2023</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/PokerHandsRecongition">github ↗</a>
+        </header>
+        <p>Three-module computer-vision system: image acquisition with noise removal, VGG16-based card recognition, and a Monte Carlo equity simulator. High recognition accuracy and realistic two-player simulation. Documented in a university publication.</p>
+        <div class="thumbs">
+          <img src="images/poker_recogn/table copy.png" alt="Poker table — original camera capture" loading="lazy" />
+          <img src="images/poker_recogn/contours.png" alt="Detected card contours" loading="lazy" />
+          <img src="images/poker_recogn/table_solved copy.png" alt="Recognition + Monte Carlo equity simulation overlay" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">Figbot — Twitch moderation bot</span>
+          <span class="meta">Java · Multi-agent system · 2022</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/Figbot">github ↗</a>
+        </header>
+        <p>Multi-agent system that assists streamers with chat moderation. Blacklist-based banning, bad-language ratio analysis for timeouts, and a GUI for streamers and mods to review the automated decisions.</p>
+        <div class="thumbs">
+          <img src="images/figbot/figbot_menu.png" alt="Figbot — operator menu" loading="lazy" />
+          <img src="images/figbot/figbot_screenshot.png" alt="Figbot — live Twitch chat moderation" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">Data Center design</span>
+          <span class="meta">Research project · UPM · 2022 · Honors</span>
+        </header>
+        <p>Group research project: complete data-center design for an online video-editing platform — rack layout, electrical plans, cooling and air-flow design. <em>Matrícula de Honor</em>.</p>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">JavaScript-PDL Compiler</span>
+          <span class="meta">Java · 2021 · Honors</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/JavaScript-PDL-Compiler">github ↗</a>
+        </header>
+        <p>Compiler for a JavaScript subset. Lexical, syntactic, and semantic analysers; symbol table; error recovery and warnings. <em>Matrícula de Honor</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Earlier work</h2>
+      <ul class="clean">
+        <li><strong>Ecomobility</strong> — Semantic Web · Madrid bike + EV charging points published as RDF (OpenRefine, RML mappings) · Autumn 2022</li>
+        <li><strong>Reactify</strong> — React + Spotify API · Winter 2022</li>
+        <li><strong>Distributed Systems Broker</strong> — pub/sub broker in C, persistent subscriptions · Winter 2021/22</li>
+        <li><strong>Bank Fraud Detection Middleware</strong> — Java JMS, concurrent middleware · Winter 2021/22</li>
+        <li><strong>Personal Shell</strong> — C / Bash; lexer, parser, multi-process pipelines · Winter 2021</li>
+        <li><strong>Sokoban</strong> — Java MVC with XML level persistence · Spring 2022</li>
+        <li><strong>Black &amp; White Filter</strong> — Assembly MC88110 · Winter 2020/21</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Education</h2>
+      <h3>Universidad Politécnica de Madrid · 2018 – 2023</h3>
+      <p>B.S. Computer Science · GPA <span class="mono">8.56 / 10</span>. <em>Matrículas de Honor</em> in Operating Systems, Compilers (Procesadores de Lenguajes), Semantic Web &amp; Knowledge Graphs, Art of Programming, Prolog, Programming Project, Data Center Project.</p>
+      <p style="color: var(--fg-dim); font-size: 0.92rem; margin-top: 16px;">Coursework: Algorithms &amp; Data Structures · AI · Machine Learning · Distributed Systems · Middleware · Concurrency · Probability &amp; Statistics · Computer Networks · Security · Numerical Algorithms · Competitive Programming · Quantum Computing.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Contact</h2>
+      <div class="row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">email</p>
+          <p class="mono"><a href="mailto:alonso.miguel.alvaro1@gmail.com">alonso.miguel.alvaro1@gmail.com</a></p>
+        </div>
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">phone</p>
+          <p class="mono">+34 661 140 420</p>
+        </div>
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">github</p>
+          <p class="mono"><a href="https://github.com/AlvaroAlonso-0">AlvaroAlonso-0</a></p>
+        </div>
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">linkedin</p>
+          <p class="mono"><a href="https://linkedin.com/in/alvaro-alonso-miguel">alvaro-alonso-miguel</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <div class="lang">ES (native) · EN (C1) · FR (basic)</div>
+        <div class="lang"><a href="es/">español</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
 </html>

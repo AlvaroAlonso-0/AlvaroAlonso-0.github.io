@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Álvaro Alonso — Lead Engineer, Capa de Inteligencia en Sail</title>
+<meta name="description" content="Lead Engineer en Sail. DeFi cuantitativo, monitorización de riesgo y optimización de yield cross-chain. Autor de dos artículos de investigación y dos informes trimestrales." />
+<meta name="theme-color" content="#0b0d10" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0b0d10; --bg-elev: #11151a; --bg-soft: #161b22;
+    --border: #222a33; --border-soft: #1a2129;
+    --fg: #e6edf3; --fg-muted: #9aa6b2; --fg-dim: #6b7682;
+    --accent: #4cc9b0; --accent-soft: rgba(76, 201, 176, 0.12);
+    --good: #6fcf97;
+    --radius: 6px; --max: 880px;
+    --mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--accent-soft); color: var(--fg); }
+  a { color: var(--accent); text-decoration: none; transition: color 120ms; }
+  a:hover { color: var(--fg); }
+  a.subtle { color: var(--fg-muted); border-bottom: 1px dotted var(--border); }
+  a.subtle:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  code, .mono { font-family: var(--mono); font-size: 0.92em; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  header.hero { padding: 96px 0 48px; border-bottom: 1px solid var(--border-soft); }
+  header.hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); line-height: 1.05; margin: 0 0 12px; letter-spacing: -0.02em; font-weight: 700; }
+  header.hero .role { font-size: 1.15rem; color: var(--fg-muted); margin: 0 0 8px; }
+  header.hero .role strong { color: var(--fg); font-weight: 600; }
+  header.hero .role .accent { color: var(--accent); font-weight: 500; }
+  header.hero .geo { color: var(--fg-dim); font-size: 0.95rem; margin: 0 0 28px; }
+  header.hero .links { display: flex; flex-wrap: wrap; gap: 18px; font-family: var(--mono); font-size: 0.92rem; }
+  header.hero .links a { color: var(--fg-muted); border-bottom: 1px solid transparent; padding-bottom: 2px; }
+  header.hero .links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  header.hero .links a span.arrow { color: var(--fg-dim); margin-left: 4px; }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 36px 0; border-bottom: 1px solid var(--border-soft); }
+  .stat { padding: 0 16px; border-left: 1px solid var(--border-soft); }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat .num { font-family: var(--mono); font-size: 1.85rem; font-weight: 600; color: var(--fg); letter-spacing: -0.02em; line-height: 1; }
+  .stat .lbl { font-size: 0.78rem; color: var(--fg-dim); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; }
+  @media (max-width: 640px) {
+    .stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; }
+    .stat { border-left: none; padding-left: 0; }
+    .stat:nth-child(odd) { border-right: 1px solid var(--border-soft); padding-right: 16px; }
+  }
+
+  section { padding: 64px 0; border-bottom: 1px solid var(--border-soft); }
+  section:last-of-type { border-bottom: none; }
+  section h2 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--fg-dim); margin: 0 0 28px; font-weight: 600; }
+  section h3 { font-size: 1.4rem; font-weight: 600; margin: 0 0 8px; letter-spacing: -0.01em; }
+  section h4 { font-size: 1.05rem; font-weight: 600; margin: 32px 0 12px; color: var(--fg); }
+  section p { color: var(--fg-muted); margin: 0 0 16px; }
+  section p strong { color: var(--fg); font-weight: 600; }
+
+  ul.clean { list-style: none; padding: 0; margin: 0 0 16px; }
+  ul.clean li { padding: 8px 0 8px 18px; position: relative; color: var(--fg-muted); border-bottom: 1px solid var(--border-soft); }
+  ul.clean li:last-child { border-bottom: none; }
+  ul.clean li::before { content: "→"; position: absolute; left: 0; top: 8px; color: var(--fg-dim); font-family: var(--mono); }
+  ul.clean li strong { color: var(--fg); font-weight: 600; }
+
+  .math { background: var(--bg-soft); border: 1px solid var(--border-soft); border-left: 3px solid var(--accent); border-radius: var(--radius); padding: 16px 20px; margin: 16px 0; font-family: var(--mono); font-size: 0.9rem; color: var(--fg); overflow-x: auto; line-height: 1.7; }
+  .math .label { display: block; font-size: 0.72rem; color: var(--fg-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-family: var(--sans); font-weight: 500; }
+
+  .wins { background: linear-gradient(180deg, rgba(76, 201, 176, 0.06), transparent); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 24px 28px; margin: 24px 0; }
+  .wins .head { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+  .wins ul { padding: 0; margin: 0; list-style: none; }
+  .wins li { padding: 12px 0; border-bottom: 1px solid var(--border-soft); color: var(--fg-muted); }
+  .wins li:last-child { border-bottom: none; }
+  .wins li strong { color: var(--fg); font-weight: 600; display: block; margin-bottom: 4px; }
+  .wins li time { font-family: var(--mono); color: var(--fg-dim); font-size: 0.85rem; margin-right: 10px; }
+
+  .project { padding: 24px 0; border-bottom: 1px solid var(--border-soft); }
+  .project:last-child { border-bottom: none; }
+  .project header.row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 20px; margin-bottom: 8px; }
+  .project header.row .title { font-size: 1.15rem; font-weight: 600; }
+  .project header.row .meta { font-family: var(--mono); font-size: 0.85rem; color: var(--fg-dim); }
+  .project header.row a.repo { margin-left: auto; font-family: var(--mono); font-size: 0.85rem; color: var(--fg-muted); }
+  .project header.row a.repo:hover { color: var(--accent); }
+  .project p { margin: 4px 0 0; }
+
+  table.perf { width: 100%; border-collapse: collapse; margin: 16px 0 8px; font-size: 0.92rem; }
+  table.perf th, table.perf td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--border-soft); }
+  table.perf th { color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+  table.perf td.num { font-family: var(--mono); }
+  table.perf td.pos { color: var(--good); font-family: var(--mono); }
+
+  ul.pubs { list-style: none; padding: 0; margin: 0; }
+  ul.pubs li { padding: 14px 0; border-bottom: 1px solid var(--border-soft); display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+  ul.pubs li:last-child { border-bottom: none; }
+  ul.pubs li .title { color: var(--fg); font-weight: 500; flex: 1 1 auto; }
+  ul.pubs li .date { font-family: var(--mono); font-size: 0.85rem; color: var(--fg-dim); }
+  ul.pubs li .tag { font-family: var(--mono); font-size: 0.72rem; color: var(--accent); border: 1px solid var(--border); padding: 2px 8px; border-radius: 99px; }
+
+  figure.chart { margin: 24px 0; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 14px 14px 10px; }
+  figure.chart img { width: 100%; height: auto; display: block; border-radius: 4px; }
+  figure.chart figcaption { margin-top: 10px; font-size: 0.8rem; color: var(--fg-dim); font-family: var(--mono); text-align: center; }
+
+  .thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 14px; }
+  .thumbs img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 4px; border: 1px solid var(--border-soft); display: block; background: var(--bg-soft); }
+
+  .role-aside { margin: 20px 0 0; padding: 14px 18px; background: var(--bg-soft); border: 1px solid var(--border-soft); border-radius: var(--radius); color: var(--fg-muted); font-size: 0.94rem; }
+  .role-aside strong { color: var(--fg); font-weight: 600; }
+
+  footer { padding: 48px 0 96px; color: var(--fg-dim); font-size: 0.92rem; }
+  footer .row { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+  footer .lang { font-family: var(--mono); font-size: 0.85rem; }
+  footer .lang a { color: var(--fg-muted); }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="wrap">
+      <h1>Álvaro Alonso</h1>
+      <p class="role"><strong>Lead Engineer · Capa de Inteligencia</strong> en <a href="https://sail.money">Sail</a></p>
+      <p class="role"><span class="accent">DeFi cuantitativo</span> · monitorización de riesgo · optimización de yield cross-chain</p>
+      <p class="geo">Madrid, España · abierto a remoto / UE</p>
+      <nav class="links">
+        <a href="https://github.com/AlvaroAlonso-0">github<span class="arrow">↗</span></a>
+        <a href="https://linkedin.com/in/alvaro-alonso-miguel">linkedin<span class="arrow">↗</span></a>
+        <a href="mailto:alonso.miguel.alvaro1@gmail.com">email<span class="arrow">↗</span></a>
+        <a href="../" class="subtle">english</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="num">~$650M</div><div class="lbl">rutados en 6 meses</div></div>
+      <div class="stat"><div class="num">~200</div><div class="lbl">usuarios</div></div>
+      <div class="stat"><div class="num">~$600k</div><div class="lbl">TVL</div></div>
+      <div class="stat"><div class="num">2 + 2</div><div class="lbl">papers · informes</div></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>Sail · Lead Engineer, Capa de Inteligencia · Nov 2024 – actualidad</h2>
+      <p>Fundé la capa de inteligencia en <a href="https://sail.money">Sail</a> — un protocolo DeFi de optimización de yield sobre Base y Arbitrum — desde cero. Dos sistemas en producción, ambos diseñados e implementados de extremo a extremo: <strong>el motor de optimización cross-chain</strong> que decide dónde se asigna el capital de los usuarios, y <strong>Sonar</strong>, el sistema de monitorización de riesgo que decide qué evitar. También definí el esquema de la base de datos y construí las primeras interfaces de usuario.</p>
+
+      <p class="role-aside"><strong>Liderazgo.</strong> Presenté la capa de inteligencia a inversores en rondas de financiación, defendí la narrativa técnica del motor y de Sonar en esas conversaciones y lideré con el CEO las discusiones de roadmap sobre dirección y trade-offs.</p>
+
+      <h4>Motor de optimización cross-chain</h4>
+      <p>Formulé la asignación de cartera como un proceso de decisión de Markov restringido. Función objetivo no convexa (yield, coste de transacción, slippage, riesgo de concentración) optimizada mediante simulated annealing con aceptación Metropolis-Hastings. Un meta-controlador CNN predice los hiperparámetros del annealing a partir del histórico APY/TVL, reduciendo la búsqueda en 3-5×.</p>
+
+      <div class="math">
+        <span class="label">APY ponderada de cartera</span>
+        APY<sub>p</sub> = Σ<sub>i</sub> (USD<sub>i</sub> · APY<sub>i</sub>) / Σ<sub>i</sub> USD<sub>i</sub>
+      </div>
+
+      <div class="math">
+        <span class="label">Aceptación Metropolis-Hastings</span>
+        P(aceptar) = min(1, exp(−ΔE / T))   donde T sigue el cooling schedule predicho por el meta-controlador.
+      </div>
+
+      <p>El marco matemático completo — formulación, demostraciones y validación empírica — está documentado en dos artículos de investigación públicos de los que soy autor.</p>
+
+      <h4>Sonar — monitorización de riesgo</h4>
+      <p>Detección de anomalías por z-score sobre baselines APY multi-horizonte (1d / 7d / 30d), scoring dual <code>SPIKE / TREND</code> (80/20 vs 40/60), ciclos de ejecución por tiers (1h / 2h / 6h) y un mecanismo de inercia financiera que redujo el churn innecesario de cartera en un 43&nbsp;%.</p>
+
+      <div class="math">
+        <span class="label">Score de anomalía</span>
+        z<sub>h</sub>(t) = (APY(t) − μ<sub>h</sub>) / σ<sub>h</sub>     para h ∈ {1d, 7d, 30d}
+      </div>
+
+      <div class="wins">
+        <div class="head">Aciertos defensivos · Q1 2026</div>
+        <p style="margin: 0 0 12px; color: var(--fg-muted);">Sonar suspendió la exposición de los usuarios antes de dos exploits confirmados públicamente — la detección fue <em>previa</em> a la confirmación pública en ambos casos:</p>
+        <ul>
+          <li>
+            <strong><time>15 feb 2026</time>· Exploit del oráculo de Moonwell</strong>
+            $1,78M de deuda incobrable, 181 prestatarios afectados. Sonar detectó comportamiento anómalo del oráculo en los mercados de Moonwell sobre Base y suspendió la exposición antes de que la magnitud del exploit se confirmara públicamente.
+          </li>
+          <li>
+            <strong><time>22 mar 2026</time>· Exploit de Resolv Protocol</strong>
+            ~$80M de USR acuñados desde una clave AWS KMS comprometida, ~$25M de ETH extraídos, USR de-pegueado a $0,003. Sonar detectó actividad de minteo no validado y suspendió las posiciones expuestas a Resolv antes de que el de-peg fuera públicamente visible.
+          </li>
+        </ul>
+      </div>
+
+      <h4>Rendimiento en producción</h4>
+      <p>Todas las cifras son netas de gas, comisiones de bridge, slippage y comisiones de protocolo.</p>
+      <table class="perf">
+        <thead>
+          <tr>
+            <th>trimestre</th>
+            <th>APY medio</th>
+            <th>vs. mejor estática</th>
+            <th>vs. Letras del Tesoro</th>
+            <th>alcance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="num">Q4 2025</td>
+            <td class="num">8,91 %</td>
+            <td class="pos">+5,43 %</td>
+            <td class="pos">+123,87 %</td>
+            <td>20 fuentes, USDC + USDT</td>
+          </tr>
+          <tr>
+            <td class="num">Q1 2026</td>
+            <td class="num">6,06 %</td>
+            <td>—</td>
+            <td class="pos">+44,3 %</td>
+            <td>32 fuentes, USDC + USDT, +EURC</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure class="chart">
+        <img src="../images/sail/q1_2026_usd_timeline.png" alt="APY diaria del agente Sail vs. mediana del mercado en el Q1 2026; el área sombreada representa la outperformance de Sail." loading="lazy" />
+        <figcaption>Q1 2026 — APY diaria: agente Sail vs. mediana del mercado. Área sombreada = outperformance.</figcaption>
+      </figure>
+
+      <figure class="chart">
+        <img src="../images/sail/q4_2025_market_vs_sail.png" alt="Q4 2025 — trayectoria de APY del agente Sail frente a todas las fuentes de mercado." loading="lazy" />
+        <figcaption>Q4 2025 — Sail frente a las 20 fuentes de mercado activas, APY diaria.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Experiencia anterior</h2>
+      <ul class="clean">
+        <li><strong>Accelya</strong> — Software Engineer I · aplicación de gestión de pagos, full-stack · Java · C# · .NET · SQL <span style="color: var(--fg-dim); font-family: var(--mono); font-size: 0.85rem;">· Dic 2023 – Nov 2024</span></li>
+        <li><strong>Deloitte</strong> — becario en Technology Strategy &amp; Transformation · investigación y análisis de mercado para clientes tecnológicos en la división de data · RapidMiner · Dataiku · Alteryx <span style="color: var(--fg-dim); font-family: var(--mono); font-size: 0.85rem;">· Mar – Jun 2023</span></li>
+        <li><strong>European Union Agency for Railways</strong> — becario de ingeniería de software · SHACL shapes para validación del grafo de conocimiento de la app de mapas de la EUAR y panel web para los informes de validación · SPARQL · SHACL · RDF <span style="color: var(--fg-dim); font-family: var(--mono); font-size: 0.85rem;">· Invierno 2022/23</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Publicaciones</h2>
+      <p style="color: var(--fg-dim); font-size: 0.9rem; margin-top: -16px; margin-bottom: 20px;">Los cuatro son trabajos de autor único.</p>
+      <ul class="pubs">
+        <li>
+          <span class="tag">paper</span>
+          <span class="title"><a href="https://docsend.com/view/ucrfnewiuy9t2fwm">Cross-Chain Optimization Engine V2 — Smart Spike Framework ↗</a></span>
+          <span class="date">Ene 2026</span>
+        </li>
+        <li>
+          <span class="tag">paper</span>
+          <span class="title"><a href="https://t.co/x2IPJbcumZ">Cross-Chain Optimization Engine V1 ↗</a></span>
+          <span class="date">Oct 2025</span>
+        </li>
+        <li>
+          <span class="tag">informe</span>
+          <span class="title"><a href="https://t.co/tafqaH8M27">Sail Agent Performance Analysis — Q4 2025 ↗</a></span>
+          <span class="date">Ene 2026</span>
+        </li>
+        <li>
+          <span class="tag">informe</span>
+          <span class="title"><a href="https://docsend.com/view/6xp4wmeb8nc7rxha">Sail Agent Performance Analysis — Q1 2026 ↗</a></span>
+          <span class="date">Abr 2026</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Proyectos seleccionados</h2>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">optcg — tracker de inversión</span>
+          <span class="meta">Python · SQLite · TUI Textual · ~6,8k LOC · 2026</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/optcg">github ↗</a>
+        </header>
+        <p>Tracker CLI + TUI de cartera para One Piece TCG (cartas, productos sellados y graduadas). Scraping en vivo de precios desde CardMarket y eBay con un pipeline de cookies con soporte Cloudflare que descifra cookies de Chrome / Arc / Brave / Edge en macOS y Windows usando el keychain de cada plataforma. Dashboard HTML offline autocontenido, sincronización con iCloud, P&amp;L por ítem y gestión de recibos.</p>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">Poker Vision</span>
+          <span class="meta">Python · PyTorch · OpenCV · 2023</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/PokerHandsRecongition">github ↗</a>
+        </header>
+        <p>Sistema de visión computacional en tres módulos: adquisición de imagen con eliminación de ruido, reconocimiento de cartas mediante CNN basada en VGG16 y simulador de Montecarlo del equity. Alta precisión de reconocimiento y simulación realista para dos jugadores. Documentado en una publicación universitaria.</p>
+        <div class="thumbs">
+          <img src="../images/poker_recogn/table copy.png" alt="Mesa de poker — captura original de la cámara" loading="lazy" />
+          <img src="../images/poker_recogn/contours.png" alt="Detección de contornos de las cartas" loading="lazy" />
+          <img src="../images/poker_recogn/table_solved copy.png" alt="Reconocimiento + simulación de equity por Montecarlo" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">Figbot — bot de moderación en Twitch</span>
+          <span class="meta">Java · Sistema multi-agente · 2022</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/Figbot">github ↗</a>
+        </header>
+        <p>Sistema multi-agente que asiste a streamers con la moderación del chat. Baneo basado en blacklist, análisis del ratio de lenguaje inapropiado para timeouts e interfaz para que streamer y mods revisen las decisiones automatizadas.</p>
+        <div class="thumbs">
+          <img src="../images/figbot/figbot_menu.png" alt="Figbot — menú del operador" loading="lazy" />
+          <img src="../images/figbot/figbot_screenshot.png" alt="Figbot — moderación en directo del chat de Twitch" loading="lazy" />
+        </div>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">Diseño de Centro de Procesamiento de Datos</span>
+          <span class="meta">Proyecto de investigación · UPM · 2022 · Matrícula de Honor</span>
+        </header>
+        <p>Proyecto en grupo: diseño completo de un CPD para una plataforma de edición de vídeo online — distribución de racks, planos eléctricos, refrigeración y flujos de aire. <em>Matrícula de Honor</em>.</p>
+      </div>
+
+      <div class="project">
+        <header class="row">
+          <span class="title">Compilador para subset de JavaScript</span>
+          <span class="meta">Java · 2021 · Matrícula de Honor</span>
+          <a class="repo" href="https://github.com/AlvaroAlonso-0/JavaScript-PDL-Compiler">github ↗</a>
+        </header>
+        <p>Compilador para un subconjunto de JavaScript. Analizadores léxico, sintáctico y semántico; tabla de símbolos; recuperación de errores y avisos. <em>Matrícula de Honor</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Otros proyectos</h2>
+      <ul class="clean">
+        <li><strong>Ecomobility</strong> — Web Semántica · estaciones de bici y puntos de carga de Madrid publicados como RDF (OpenRefine, RML) · otoño 2022</li>
+        <li><strong>Reactify</strong> — React + API de Spotify · invierno 2022</li>
+        <li><strong>Broker de Sistemas Distribuidos</strong> — broker pub/sub en C, suscripciones persistentes · invierno 2021/22</li>
+        <li><strong>Middleware de Detección de Fraude Bancario</strong> — Java JMS, middleware concurrente · invierno 2021/22</li>
+        <li><strong>Shell propia</strong> — C / Bash; lexer, parser, pipelines multi-proceso · invierno 2021</li>
+        <li><strong>Sokoban</strong> — Java MVC con persistencia XML · primavera 2022</li>
+        <li><strong>Filtro Blanco y Negro</strong> — Assembly MC88110 · invierno 2020/21</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Formación</h2>
+      <h3>Universidad Politécnica de Madrid · 2018 – 2023</h3>
+      <p>Grado en Ingeniería Informática · Nota media <span class="mono">8,56 / 10</span>. <em>Matrículas de Honor</em> en Sistemas Operativos, Procesadores de Lenguajes, Web Semántica y Grafos de Conocimiento, Art of Programming, Prolog, Programming Project, Proyecto Centro de Procesamiento de Datos.</p>
+      <p style="color: var(--fg-dim); font-size: 0.92rem; margin-top: 16px;">Materias: Algoritmos y Estructuras de Datos · IA · Machine Learning · Sistemas Distribuidos · Middleware · Concurrencia · Probabilidad y Estadística · Redes de Computadores · Seguridad · Algorítmica Numérica · Competitive Programming · Computación Cuántica.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Contacto</h2>
+      <div class="row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">email</p>
+          <p class="mono"><a href="mailto:alonso.miguel.alvaro1@gmail.com">alonso.miguel.alvaro1@gmail.com</a></p>
+        </div>
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">teléfono</p>
+          <p class="mono">+34 661 140 420</p>
+        </div>
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">github</p>
+          <p class="mono"><a href="https://github.com/AlvaroAlonso-0">AlvaroAlonso-0</a></p>
+        </div>
+        <div>
+          <p style="margin-bottom: 4px; color: var(--fg-dim); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.08em;">linkedin</p>
+          <p class="mono"><a href="https://linkedin.com/in/alvaro-alonso-miguel">alvaro-alonso-miguel</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="row">
+        <div class="lang">ES (nativo) · EN (C1) · FR (básico)</div>
+        <div class="lang"><a href="../">english</a></div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
